@@ -1,0 +1,348 @@
+[
+ {
+  "id": "626197",
+  "slug": "character-maker",
+  "name": "Character Maker",
+  "franchise": "Original",
+  "category": "General",
+  "rank": 9700,
+  "blurb": "The most-visited maker on the site — a deep, versatile anime-style face and outfit kit.",
+  "title": "Character maker",
+  "creator": "QueenBee",
+  "icon": "/makers/626197/icon_cMwgM6OtTP8X6r9P.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "cute",
+   "lgbt",
+   "#character"
+  ],
+  "parts": 35,
+  "items": 541,
+  "colors": 189,
+  "images": 2602,
+  "combinations": 1.9661953738543888e+52,
+  "manifestKB": 214
+ },
+ {
+  "id": "2758034",
+  "slug": "pony-maker",
+  "name": "Pony Maker",
+  "franchise": "My Little Pony",
+  "category": "Animation",
+  "rank": 6900,
+  "blurb": "Full pony builder: body, mane, horn, wings, cutie-mark accessories and crystal coats.",
+  "title": "pony maker arina-nadzarova",
+  "creator": "arina-gremyako",
+  "icon": "/makers/2758034/icon_uLtFL5pcp3ZTNZDU.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "girl",
+   "pony",
+   "character",
+   "oc",
+   "boy",
+   "horse",
+   "mlp",
+   "firstimgmaker"
+  ],
+  "parts": 33,
+  "items": 339,
+  "colors": 328,
+  "images": 4105,
+  "combinations": 6.577205054713064e+61,
+  "manifestKB": 294
+ },
+ {
+  "id": "254030",
+  "slug": "warrior-cats",
+  "name": "Cat Creator",
+  "franchise": "Warrior Cats",
+  "category": "Books",
+  "rank": 5300,
+  "blurb": "Warrior-cat clan generator with pelts, markings, scars, flora and expression layers.",
+  "title": "felidaze's cat creator",
+  "creator": "felidaze",
+  "icon": "/makers/254030/icon_X17S1FAMo0V1hkwq.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "cat",
+   "animals"
+  ],
+  "parts": 42,
+  "items": 357,
+  "colors": 487,
+  "images": 3580,
+  "combinations": 4.903513462819746e+75,
+  "manifestKB": 262
+ },
+ {
+  "id": "1257436",
+  "slug": "sonic-maker",
+  "name": "Sonic Maker",
+  "franchise": "Sonic the Hedgehog",
+  "category": "Games",
+  "rank": 4800,
+  "blurb": "Build a hedgehog, echidna or fox: quills, muzzle, gloves, shoes and full colour control.",
+  "title": "Sonic Maker",
+  "creator": "Crowesn",
+  "icon": "/makers/1257436/icon_wpSYVVD03W17ppJN.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "Sonic"
+  ],
+  "parts": 35,
+  "items": 391,
+  "colors": 347,
+  "images": 5540,
+  "combinations": 4.486927050616673e+59,
+  "manifestKB": 383
+ },
+ {
+  "id": "125168",
+  "slug": "fursona-maker",
+  "name": "Fursona Maker",
+  "franchise": "Furry",
+  "category": "Furry",
+  "rank": 4600,
+  "blurb": "Clean fursona portrait kit — snouts, ears, fluff, markings and a large palette set.",
+  "title": "Mrsquidgereen's Fursona Maker",
+  "creator": "Mrsquidgereen",
+  "icon": "/makers/125168/icon_SopZmvw7YrtzqETi.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "furry",
+   "kemono",
+   "ケモノ",
+   "cat",
+   "dog",
+   "fursona",
+   "fox"
+  ],
+  "parts": 22,
+  "items": 243,
+  "colors": 144,
+  "images": 1674,
+  "combinations": 1.5899940880315802e+37,
+  "manifestKB": 126
+ },
+ {
+  "id": "2047846",
+  "slug": "murder-drones",
+  "name": "Murder Drones OC Maker",
+  "franchise": "Murder Drones",
+  "category": "Animation",
+  "rank": 4000,
+  "blurb": "Worker and disassembly drone builder with visor expressions, plating and outerwear.",
+  "title": "MurderDronesOCmaker[dropped]",
+  "creator": "lenDraks",
+  "icon": "/makers/2047846/icon_jtvG4QitFkbiD8jK.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "OC",
+   "Robot",
+   "Murder",
+   "Drones",
+   "Drone",
+   "MurderDrones"
+  ],
+  "parts": 17,
+  "items": 114,
+  "colors": 88,
+  "images": 732,
+  "combinations": 1.0575473719807181e+21,
+  "manifestKB": 62
+ },
+ {
+  "id": "2243753",
+  "slug": "gorilla-tag-pfp",
+  "name": "Gorilla Tag PFP Maker",
+  "franchise": "Gorilla Tag",
+  "category": "Games",
+  "rank": 3800,
+  "blurb": "Blocky VR-monke profile picture generator — hats, faces, badges and holdables.",
+  "title": "Gorilla Tag PFP Maker",
+  "creator": "xanikanz",
+  "icon": "/makers/2243753/icon_EfZAjXH3hLg3U7dH.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "cute",
+   "pfp",
+   "profilepic"
+  ],
+  "parts": 9,
+  "items": 189,
+  "colors": 9,
+  "images": 193,
+  "combinations": 18565747200.0,
+  "manifestKB": 33
+ },
+ {
+  "id": "708151",
+  "slug": "fantasy-maker",
+  "name": "Fantasy Character Maker",
+  "franchise": "D&D / Tabletop",
+  "category": "Tabletop",
+  "rank": 3000,
+  "blurb": "Tabletop portrait kit: horns, ears, bangs, layered clothing, hats and adventuring gear.",
+  "title": "Fantasy Character Maker",
+  "creator": "Deerinspotlight",
+  "icon": "/makers/708151/icon_YByMCDXNF63B3KQp.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "unisex",
+   "fantasy",
+   "dnd"
+  ],
+  "parts": 20,
+  "items": 473,
+  "colors": 129,
+  "images": 1800,
+  "combinations": 2.892210362626861e+35,
+  "manifestKB": 154
+ },
+ {
+  "id": "2744981",
+  "slug": "dandys-world",
+  "name": "Dandy's World OC Maker",
+  "franchise": "Dandy's World",
+  "category": "Games",
+  "rank": 2500,
+  "blurb": "Full-body toon builder for the Roblox horror hit — the maker this project started from.",
+  "title": "DANDY'S WORLD OC MAKER! (WIP)",
+  "creator": "_Molly_la_patate",
+  "icon": "/makers/2744981/icon_f6GyNT11FpJ4V2WA.webp",
+  "canvas": {
+   "w": 540,
+   "h": 960
+  },
+  "tags": [
+   "character",
+   "cute",
+   "cool",
+   "cartoon",
+   "wip",
+   "colorful",
+   "cartoony",
+   "toon"
+  ],
+  "parts": 16,
+  "items": 134,
+  "colors": 90,
+  "images": 399,
+  "combinations": 1.2879416208765173e+21,
+  "manifestKB": 44
+ },
+ {
+  "id": "2323700",
+  "slug": "hazbin-sona",
+  "name": "Hazbin-Sona Maker",
+  "franchise": "Hazbin Hotel",
+  "category": "Animation",
+  "rank": 1900,
+  "blurb": "Hell-born OC builder with horns, tails, sharp grins and back-layer hair.",
+  "title": "Hazbin Hotel Hazbin-Sona maker",
+  "creator": "Miku-mon",
+  "icon": "/makers/2323700/icon_iJMjTsMyXBRPssB4.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "Cartoon",
+   "Anime",
+   "Furry",
+   "Human",
+   "Helluva",
+   "Helluvaboss",
+   "Hazbin",
+   "Hazbinhotel"
+  ],
+  "parts": 12,
+  "items": 144,
+  "colors": 30,
+  "images": 366,
+  "combinations": 4045075200000000.0,
+  "manifestKB": 40
+ },
+ {
+  "id": "1718994",
+  "slug": "fnaf-oc",
+  "name": "FNAF OC Creator",
+  "franchise": "Five Nights at Freddy's",
+  "category": "Games",
+  "rank": 1400,
+  "blurb": "Animatronic character kit — muzzles, endoskeleton eyes, ears and stage costumes.",
+  "title": "fnaf oc creator (wip)",
+  "creator": "t0ny_h4rd",
+  "icon": "/makers/1718994/icon_zjkK3voJmyXjuMy5.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "anthro",
+   "character",
+   "cartoon",
+   "fnaf",
+   "picrew",
+   "android",
+   "ocmaker",
+   "Dressup"
+  ],
+  "parts": 18,
+  "items": 64,
+  "colors": 145,
+  "images": 382,
+  "combinations": 9.638893178202672e+23,
+  "manifestKB": 37
+ },
+ {
+  "id": "1472643",
+  "slug": "genshin-maker",
+  "name": "Genshin Character Maker",
+  "franchise": "Genshin Impact",
+  "category": "Games",
+  "rank": 1000,
+  "blurb": "Teyvat-styled portrait maker: beast ears, horns, layered robes, scarves and hats.",
+  "title": "genshin character maker",
+  "creator": "not_darkly",
+  "icon": "/makers/1472643/icon_91PmJCBBqgIUzRuK.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "genshin"
+  ],
+  "parts": 39,
+  "items": 411,
+  "colors": 316,
+  "images": 4250,
+  "combinations": 1.0634616947733108e+67,
+  "manifestKB": 310
+ }
+]

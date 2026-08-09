@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OC Maker
 
-## Getting Started
+🌐 Live site: **https://www.ocmaker.site**
 
-First, run the development server:
+A fully client-side character-creator archive. Twelve popular OC (original character) makers —
+games, animation, furry and tabletop franchises — rebuilt as a single static Next.js site.
+Every layer is composited in the browser on a `<canvas>`; nothing is uploaded, nothing is
+rendered server-side.
+
+---
+
+## What's inside
+
+| Slug | Maker | Franchise |
+| --- | --- | --- |
+| `character-maker` | Character Maker | General |
+| `pony-maker` | Pony Maker | My Little Pony |
+| `warrior-cats` | Warrior Cats Cat Creator | Warriors |
+| `sonic-maker` | Sonic Character Maker | Sonic the Hedgehog |
+| `fursona-maker` | Fursona Maker | Furry |
+| `murder-drones` | Murder Drones OC Maker | Murder Drones |
+| `gorilla-tag` | Gorilla Tag PFP Maker | Gorilla Tag |
+| `fantasy-character` | Fantasy Character Maker | Tabletop / Fantasy |
+| `dandys-world` | Dandy's World OC Maker | Dandy's World |
+| `hazbin-sona` | Hazbin-Sona Maker | Hazbin Hotel |
+| `fnaf-oc` | FNAF OC Creator | Five Nights at Freddy's |
+| `genshin-character` | Genshin Character Maker | Genshin Impact |
+
+## Features
+
+- **Per-maker studio** at `/m/<slug>` — category tabs, colour swatches, item grid.
+- **Randomise / Shuffle** with rule-group awareness (mutually-exclusive parts never collide).
+- **Undo / Redo** with full history, plus keyboard shortcuts (`R` reroll, `Ctrl+Z` / `Ctrl+Shift+Z`).
+- **Share codes** — the whole selection is packed into the URL hash (`#c=…`), no backend needed.
+- **PNG download** at native canvas resolution.
+- **Autosave** per maker via `localStorage`.
+- **SEO** — per-page canonical URLs, Open Graph cards, JSON-LD (`WebApplication` / `WebSite` /
+  `ItemList`), generated `sitemap.xml` and `robots.txt`.
+
+## Tech stack
+
+- Next.js 15 (App Router) exported as a fully static site (`output: 'export'`)
+- TypeScript + plain CSS (no runtime CSS framework)
+- Canvas 2D compositor using the painter's algorithm, single-pass to avoid flicker
+- Manifests lazy-loaded per maker (`/makers/<id>.json`) so the JS bundle stays small
+- All artwork transcoded PNG → WebP (632 MB → 182 MB)
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # static export into dist/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deploy `dist/` to any static host (Cloudflare Pages, Netlify, Vercel, S3 …).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Clean URLs
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`app/lib/site.ts` exposes `PAGE_EXT`. It currently defaults to `.html` so the build works on
+static hosts without rewrite rules. If your host rewrites extensionless paths, set
+`PAGE_EXT = ''` and flip `trailingSlash: true` in `next.config.js` for `/m/<slug>/` URLs.
 
-## Learn More
+## Asset pipeline
 
-To learn more about Next.js, take a look at the following resources:
+The `tools/` directory holds the mirroring pipeline (Python 3.13):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Script | Purpose |
+| --- | --- |
+| `devalue_parse.py` | Decodes the `application/json+devalue` state blob into plain JSON |
+| `probe_makers.py` | Fetches and caches maker state, reports part/item/layer counts |
+| `size_estimate.py` | HEAD-samples the CDN to estimate mirror size before downloading |
+| `build_maker.py` | Downloads every layer, transcodes to WebP, emits `public/makers/<id>.json` |
+| `build_catalogue.py` | Merges curated metadata with manifests into `catalogue.json` |
+| `build_brand.py` | Generates favicons, PWA icons and Open Graph cards |
+| `shoot.py` | Headless smoke test — loads every studio and verifies the canvas renders |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`raw-assets/` (pristine PNGs) and `.cache/` are git-ignored; re-run `build_maker.py` to
+regenerate them.
 
-## Deploy on Vercel
+See [`ARCHITECTURE.md`](./ARCHITECTURE.md) for the full data-model and rendering deep dive.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Asset notice
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All artwork belongs to the original Picrew creators credited in each studio footer. This
+repository is a technical study of the layered-avatar rendering model. Do not redistribute
+the artwork commercially or claim it as your own.
