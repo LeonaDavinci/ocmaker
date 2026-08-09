@@ -12,6 +12,42 @@ import type {
  * so a single page never ships the whole library in its JS bundle.    *
  * ------------------------------------------------------------------ */
 
+/**
+ * Asset CDN. The 29k+ WebP part images live in the GitHub repo and are served
+ * through jsDelivr so they stay OUT of the Vercel deployment (Vercel enforces a
+ * hard per-deploy file limit that the raw asset count would blow past). In dev
+ * we keep serving them locally from /public for offline convenience.
+ */
+const CDN_BASE =
+  process.env.NODE_ENV === 'production'
+    ? 'https://cdn.jsdelivr.net/gh/LeonaDavinci/ocmaker@main/public'
+    : '';
+
+/** Rewrite a /makers/... path to the CDN in production, or leave it local in dev. */
+export const assetUrl = (u?: string | null): string => {
+  if (!u) return u ?? '';
+  if (u.startsWith('/makers/')) return `${CDN_BASE}${u}`;
+  return u;
+};
+
+/** Recursively rewrite every /makers/... string inside a parsed manifest. */
+function rewriteManifest<T>(node: T): T {
+  if (typeof node === 'string') return assetUrl(node) as unknown as T;
+  if (Array.isArray(node)) {
+    for (let i = 0; i < node.length; i++) node[i] = rewriteManifest(node[i]);
+    return node;
+  }
+  if (node && typeof node === 'object') {
+    for (const k of Object.keys(node)) {
+      (node as Record<string, unknown>)[k] = rewriteManifest(
+        (node as Record<string, unknown>)[k],
+      );
+    }
+    return node;
+  }
+  return node;
+}
+
 const cache = new Map<string, Promise<MakerManifest>>();
 
 export function loadManifest(id: string): Promise<MakerManifest> {
@@ -20,7 +56,7 @@ export function loadManifest(id: string): Promise<MakerManifest> {
     p = fetch(`/makers/${id}.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`manifest ${id}: HTTP ${r.status}`);
-        return r.json() as Promise<MakerManifest>;
+        return (r.json() as Promise<MakerManifest>).then((m) => rewriteManifest(m));
       })
       .catch((e) => {
         cache.delete(id);

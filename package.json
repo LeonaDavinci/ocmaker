@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/clean-export.mjs",
     "start": "next start"
   },
   "dependencies": {

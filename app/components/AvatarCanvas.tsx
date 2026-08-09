@@ -22,6 +22,9 @@ function loadImage(src: string): Promise<HTMLImageElement | null> {
   return new Promise((resolve) => {
     const img = new Image();
     img.decoding = 'async';
+    // CDN images (jsDelivr) must be requested CORS-clean or the canvas is
+    // tainted and the PNG export (toBlob) throws. jsDelivr sends ACAO: *.
+    img.crossOrigin = 'anonymous';
     img.onload = () => {
       cache.set(src, img);
       resolve(img);
