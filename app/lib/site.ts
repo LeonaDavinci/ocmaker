@@ -16,8 +16,14 @@ export const SITE_DESCRIPTION =
  * every static host (including the CloudStudio preview sandbox). If you deploy
  * behind a host with clean-URL rewrites (Vercel / Netlify / Cloudflare Pages),
  * set this to '' and flip `trailingSlash` in next.config.js.
+ *
+ * In `next dev` the route is extensionless (`/m/<slug>`), but `output: 'export'`
+ * rejects any param not enumerated in `generateStaticParams()` — so a `.html`
+ * link (e.g. `/m/character-maker.html`) 500s in dev even though the same file
+ * works once statically exported. Mirror `CDN_BASE`: keep `.html` for the
+ * production export, drop it in development so internal links match the route.
  */
-export const PAGE_EXT = '.html';
+export const PAGE_EXT = process.env.NODE_ENV === 'production' ? '.html' : '';
 
 /** Site-relative path of a maker studio page. */
 export const makerPath = (slug: string): string => `/m/${slug}${PAGE_EXT}`;
