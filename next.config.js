@@ -7,7 +7,9 @@ const nextConfig = {
   // on demand, so we drop the export mode outside of production builds.
   output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
   images: { unoptimized: true },
-  trailingSlash: false,
+  // Clean URLs: the export emits `/m/<slug>/index.html`; Vercel/Netlify/
+  // Cloudflare serve it at the extensionless `/m/<slug>/`.
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
