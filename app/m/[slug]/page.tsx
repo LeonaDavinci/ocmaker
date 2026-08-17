@@ -14,7 +14,11 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const m = bySlug(slug);
+  // Dev server has no .html rewrite, so links like /m/<slug>.html arrive with
+  // the extension still attached. Strip it so the lookup (and canonical/OG URLs)
+  // stay correct. Harmless in the static export, where files are pre-rendered.
+  const cleanSlug = slug.replace(/\.html?$/i, '');
+  const m = bySlug(cleanSlug);
   if (!m) return { title: `Maker not found — ${SITE_NAME}` };
 
   const title = `${m.name} — ${m.franchise}`;
@@ -25,11 +29,11 @@ export async function generateMetadata({
     title,
     description,
     keywords: [m.franchise, m.name, 'oc maker', 'character creator', ...m.tags],
-    alternates: { canonical: makerPath(slug) },
+    alternates: { canonical: makerPath(cleanSlug) },
     openGraph: {
       type: 'website',
       locale: 'en_US',
-      url: absUrl(makerPath(slug)),
+      url: absUrl(makerPath(cleanSlug)),
       siteName: SITE_NAME,
       title,
       description,
@@ -53,10 +57,11 @@ export async function generateMetadata({
 
 export default async function MakerPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const entry = bySlug(slug);
+  const cleanSlug = slug.replace(/\.html?$/i, '');
+  const entry = bySlug(cleanSlug);
   if (!entry) notFound();
 
-  const url = absUrl(makerPath(slug));
+  const url = absUrl(makerPath(cleanSlug));
   const og = absUrl(`/og/${entry.slug}.png`);
 
   const jsonLd = {
