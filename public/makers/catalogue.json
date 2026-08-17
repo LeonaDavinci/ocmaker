@@ -344,5 +344,235 @@
   "images": 4250,
   "combinations": 1.0634616947733108e+67,
   "manifestKB": 310
+ },
+ {
+  "id": "2636254",
+  "slug": "cookie-run-kingdom",
+  "name": "Cookie Run Kingdom OC",
+  "franchise": "Cookie Run",
+  "category": "Games",
+  "rank": 950,
+  "blurb": "Build your own cookie hero — dough, toppings, weapons and kingdom classes.",
+  "title": "Cookie Run Kingdom OC",
+  "creator": "MentaEsc",
+  "icon": "/makers/2636254/icon_Tg7bwAcilffOfqDq.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [],
+  "parts": 25,
+  "items": 660,
+  "colors": 373,
+  "images": 10026,
+  "combinations": 2.3101512953907902e+61,
+  "manifestKB": 669
+ },
+ {
+  "id": "2468985",
+  "slug": "danganronpa",
+  "name": "Danganronpa OC Maker",
+  "franchise": "Danganronpa",
+  "category": "Games",
+  "rank": 880,
+  "blurb": "Ultra-despair character kit in the distinctive Danganronpa art style.",
+  "title": "danganronpa style oc maker",
+  "creator": "zalvarine_varna",
+  "icon": "/makers/2468985/icon_6Io1tYeNS0B7cKWI.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "character",
+   "icon",
+   "oc",
+   "anime",
+   "avatar",
+   "ocmaker",
+   "danganronpa",
+   "genderneutral"
+  ],
+  "parts": 31,
+  "items": 414,
+  "colors": 255,
+  "images": 4146,
+  "combinations": 4.713862136702752e+54,
+  "manifestKB": 300
+ },
+ {
+  "id": "1293211",
+  "slug": "my-hero-academia",
+  "name": "MHA OC Maker",
+  "franchise": "My Hero Academia",
+  "category": "Anime",
+  "rank": 820,
+  "blurb": "Design a hero or villain — hair, costumes, quirks and UA-uniform layers.",
+  "title": "BNHA UA STUDEN OC MAKER [WIP]",
+  "creator": "naepyonnn",
+  "icon": "/makers/1293211/icon_WUdj8fwf9F9jPD2D.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "OC",
+   "WIP",
+   "BNHA",
+   "MHA",
+   "OC MAKER",
+   "CHARACTER"
+  ],
+  "parts": 17,
+  "items": 166,
+  "colors": 17,
+  "images": 165,
+  "combinations": 1473313121280000.0,
+  "manifestKB": 31
+ },
+ {
+  "id": "2362854",
+  "slug": "shinobi-maker",
+  "name": "Shinobi OC Maker",
+  "franchise": "Naruto",
+  "category": "Anime",
+  "rank": 760,
+  "blurb": "Forge a ninja OC: headbands, flak jackets and village colours.",
+  "title": "Shinobi OC Maker",
+  "creator": "s0uredApple",
+  "icon": "/makers/2362854/icon_BnKkFYnROeRtBeeE.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "anime",
+   "shinobi",
+   "ninja",
+   "kunoichi"
+  ],
+  "parts": 23,
+  "items": 274,
+  "colors": 179,
+  "images": 2994,
+  "combinations": 3.141049595762563e+37,
+  "manifestKB": 215
+ },
+ {
+  "id": "2353597",
+  "slug": "monster-high",
+  "name": "Monster High OC Maker",
+  "franchise": "Monster High",
+  "category": "Cartoon",
+  "rank": 700,
+  "blurb": "Freaky-fabulous monster student builder with signature MH proportions.",
+  "title": "Monster High Character Creator",
+  "creator": "cynical_koi",
+  "icon": "/makers/2353597/icon_hHqfG8qfY6DPEd9m.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "monster",
+   "oc",
+   "monsterhigh"
+  ],
+  "parts": 19,
+  "items": 358,
+  "colors": 19,
+  "images": 358,
+  "combinations": 1.2990224255202754e+23,
+  "manifestKB": 62
+ },
+ {
+  "id": "2435758",
+  "slug": "arcane-maker",
+  "name": "Arcane OC Maker",
+  "franchise": "Arcane",
+  "category": "Animation",
+  "rank": 640,
+  "blurb": "Hextech-flavoured OC builder inspired by the Arcane series art.",
+  "title": "ITSV PICREW",
+  "creator": "naylissah",
+  "icon": "/makers/2435758/icon_25SAt9DBGF6r9P1l.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "inclusive",
+   "oc maker",
+   "itsv",
+   "black",
+   "Picrew",
+   "Spiderman",
+   "Spiderverse"
+  ],
+  "parts": 43,
+  "items": 613,
+  "colors": 416,
+  "images": 7193,
+  "combinations": 7.99485680433126e+73,
+  "manifestKB": 506
+ },
+ {
+  "id": "1440950",
+  "slug": "manga-character-creator",
+  "name": "Manga Character Creator",
+  "franchise": "Manga",
+  "category": "Anime",
+  "rank": 580,
+  "blurb": "Shonen-manga style face and outfit creator with bold ink outlines.",
+  "title": "Manga Character Creator",
+  "creator": "straybec",
+  "icon": "/makers/1440950/icon_9hJZP5TZqoekXBMz.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "漫画",
+   "icon",
+   "キャラクター"
+  ],
+  "parts": 28,
+  "items": 238,
+  "colors": 210,
+  "images": 2042,
+  "combinations": 2.975034376114849e+43,
+  "manifestKB": 157
+ },
+ {
+  "id": "111486",
+  "slug": "fantasy-oc-creator",
+  "name": "Fantasy OC Creator",
+  "franchise": "Original",
+  "category": "Fantasy",
+  "rank": 520,
+  "blurb": "Niche-fantasy character kit — diverse skin tones, masculine features and hidden colour goodies.",
+  "title": "Fantasy OC Creator",
+  "creator": "TheTwi",
+  "icon": "/makers/111486/icon_mECRhJttmvZSyVrM.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "female",
+   "monster",
+   "cool",
+   "male",
+   "fantasy",
+   "diverse",
+   "dnd",
+   "rpg"
+  ],
+  "parts": 47,
+  "items": 600,
+  "colors": 444,
+  "images": 7532,
+  "combinations": 7.783863663725776e+84,
+  "manifestKB": 518
  }
 ]

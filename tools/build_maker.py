@@ -23,7 +23,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from probe_makers import fetch_state  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-RAW = os.path.join(ROOT, "raw-assets")
+# Pristine PNG cache. Defaults next to the repo; override with OCMAKER_RAW
+# (e.g. when the system drive is low on space).
+RAW = os.environ.get("OCMAKER_RAW", os.path.join(ROOT, "raw-assets"))
 WEB = os.path.join(ROOT, "public", "makers")
 CDN = "https://cdn.picrew.me"
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "

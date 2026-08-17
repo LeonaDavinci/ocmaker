@@ -32,6 +32,23 @@ CURATED = [
      "Teyvat-styled portrait maker: beast ears, horns, layered robes, scarves and hats."),
     ("2744981", "dandys-world",     "Dandy's World OC Maker", "Dandy's World",       "Games",     2500,
      "Full-body toon builder for the Roblox horror hit — the maker this project started from."),
+    # --- batch 2: expanded to 20 makers (mirrored 2026-08-16) ---
+    ("2636254", "cookie-run-kingdom", "Cookie Run Kingdom OC",  "Cookie Run",        "Games",     950,
+     "Build your own cookie hero — dough, toppings, weapons and kingdom classes."),
+    ("2468985", "danganronpa",        "Danganronpa OC Maker",    "Danganronpa",       "Games",     880,
+     "Ultra-despair character kit in the distinctive Danganronpa art style."),
+    ("1293211", "my-hero-academia",   "MHA OC Maker",            "My Hero Academia",  "Anime",     820,
+     "Design a hero or villain — hair, costumes, quirks and UA-uniform layers."),
+    ("2362854", "shinobi-maker",      "Shinobi OC Maker",        "Naruto",            "Anime",     760,
+     "Forge a ninja OC: headbands, flak jackets and village colours."),
+    ("2353597", "monster-high",       "Monster High OC Maker",   "Monster High",      "Cartoon",   700,
+     "Freaky-fabulous monster student builder with signature MH proportions."),
+    ("2435758", "arcane-maker",       "Arcane OC Maker",         "Arcane",            "Animation", 640,
+     "Hextech-flavoured OC builder inspired by the Arcane series art."),
+    ("1440950", "manga-character-creator", "Manga Character Creator", "Manga",        "Anime",     580,
+     "Shonen-manga style face and outfit creator with bold ink outlines."),
+    ("111486",  "fantasy-oc-creator", "Fantasy OC Creator",      "Original",          "Fantasy",   520,
+     "Niche-fantasy character kit — diverse skin tones, masculine features and hidden colour goodies."),
 ]
 
 

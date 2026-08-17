@@ -161,7 +161,7 @@ FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 MANIFEST = {
     "name": "OC Maker — character creators for games, anime & IPs",
     "short_name": "OC Maker",
-    "description": "Free browser-only OC makers for 12 fandoms. Nothing is uploaded.",
+    "description": "Free browser-only OC makers for 20 fandoms. Nothing is uploaded.",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
