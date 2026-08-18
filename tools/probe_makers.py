@@ -21,20 +21,35 @@ CACHE = os.path.abspath(CACHE)
 os.makedirs(CACHE, exist_ok=True)
 
 
+def _fetch_html(url: str, attempts: int = 6) -> str:
+    """GET a URL, retrying on transient read errors (e.g. IncompleteRead)."""
+    last = None
+    for i in range(attempts):
+        try:
+            req = Request(url, headers={
+                "User-Agent": UA,
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.9",
+            })
+            with urlopen(req, timeout=45) as r:
+                return r.read().decode("utf-8", "replace")
+        except Exception as e:  # noqa: BLE001
+            last = e
+            time.sleep(1.0 + i)
+    raise last or RuntimeError("fetch failed")
+
+
 def fetch_state(mid: str):
     """Return the parsed picrew-image-maker-data blob for a maker id."""
     raw_path = os.path.join(CACHE, f"{mid}.json")
     if os.path.exists(raw_path) and os.path.getsize(raw_path) > 1000:
-        return json.load(open(raw_path, encoding="utf-8"))
+        try:
+            return json.load(open(raw_path, encoding="utf-8"))
+        except Exception:  # noqa: BLE001
+            pass  # corrupt cache — fall through to re-fetch
 
     url = f"https://picrew.me/en/image_maker/{mid}/"
-    req = Request(url, headers={
-        "User-Agent": UA,
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9",
-    })
-    with urlopen(req, timeout=45) as r:
-        html = r.read().decode("utf-8", "replace")
+    html = _fetch_html(url)
 
     m = re.search(r'<script[^>]*type="application/json\+devalue"[^>]*>(.*?)</script>', html, re.S)
     if not m:

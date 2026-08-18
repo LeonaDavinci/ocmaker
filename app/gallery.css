@@ -186,6 +186,10 @@
   flex-wrap: wrap;
 }
 
+.chips-sub {
+  margin-top: 9px;
+}
+
 .chip {
   border-radius: 999px;
   padding: 7px 15px;
@@ -195,6 +199,12 @@
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid var(--line);
   transition: all 0.14s ease;
+}
+
+.chip-sm {
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .chip:hover {

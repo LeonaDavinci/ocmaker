@@ -10,6 +10,7 @@ const nf = new Intl.NumberFormat('en-US');
 
 export default function Gallery({ makers }: { makers: CatalogueEntry[] }) {
   const [filter, setFilter] = useState<string>('All');
+  const [franchise, setFranchise] = useState<string>('All');
   const [query, setQuery] = useState('');
 
   const categories = useMemo(() => {
@@ -18,10 +19,17 @@ export default function Gallery({ makers }: { makers: CatalogueEntry[] }) {
     return ['All', ...[...counts.keys()].sort((a, b) => (counts.get(b) ?? 0) - (counts.get(a) ?? 0))];
   }, [makers]);
 
+  const franchises = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const m of makers) counts.set(m.franchise, (counts.get(m.franchise) ?? 0) + 1);
+    return ['All', ...[...counts.keys()].sort((a, b) => (counts.get(b) ?? 0) - (counts.get(a) ?? 0))];
+  }, [makers]);
+
   const shown = useMemo(() => {
     const q = query.trim().toLowerCase();
     return makers.filter((m) => {
       if (filter !== 'All' && m.category !== filter) return false;
+      if (franchise !== 'All' && m.franchise !== franchise) return false;
       if (!q) return true;
       return (
         m.name.toLowerCase().includes(q) ||
@@ -126,6 +134,19 @@ export default function Gallery({ makers }: { makers: CatalogueEntry[] }) {
                 onClick={() => setFilter(c)}
               >
                 {c}
+              </button>
+            ))}
+          </div>
+          <div className="chips chips-sub" role="tablist" aria-label="Filter by game, anime or IP">
+            {franchises.map((f) => (
+              <button
+                key={f}
+                role="tab"
+                aria-selected={f === franchise}
+                className={`chip chip-sm ${f === franchise ? 'chip-on' : ''}`}
+                onClick={() => setFranchise(f)}
+              >
+                {f}
               </button>
             ))}
           </div>

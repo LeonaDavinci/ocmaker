@@ -18,6 +18,10 @@ raw-assets/
 public/assets/
 public/maker-manifest.json
 
+# Python cache
+__pycache__/
+*.pyc
+
 # QA screenshots
 preview/
 

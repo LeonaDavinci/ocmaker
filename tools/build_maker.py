@@ -27,6 +27,11 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 # (e.g. when the system drive is low on space).
 RAW = os.environ.get("OCMAKER_RAW", os.path.join(ROOT, "raw-assets"))
 WEB = os.path.join(ROOT, "public", "makers")
+# Where transcoded WebP are written. Default: next to the manifest in the code
+# repo (served from the main `ocmaker` repo via jsDelivr). For makers sharded
+# into the dedicated `ocmaker-media` repo, set OCMAKER_MEDIA_DIR to that repo's
+# local checkout (e.g. D:/ocmaker-media/public/makers).
+WEB_ASSETS = os.environ.get("OCMAKER_MEDIA_DIR", WEB)
 CDN = "https://cdn.picrew.me"
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
@@ -46,7 +51,7 @@ def transfer(args):
     mid, url = args
     rel = tail(url)
     raw_path = os.path.join(RAW, mid, rel)
-    web_path = os.path.join(WEB, mid, os.path.splitext(rel)[0] + ".webp")
+    web_path = os.path.join(WEB_ASSETS, mid, os.path.splitext(rel)[0] + ".webp")
 
     if os.path.exists(web_path) and os.path.getsize(web_path) > 0:
         with lock:
@@ -190,7 +195,10 @@ def run(mid: str):
 
 if __name__ == "__main__":
     for m in sys.argv[1:]:
-        run(m)
+        try:
+            run(m)
+        except Exception as e:  # noqa: BLE001
+            print(f"!! {m} FAILED: {type(e).__name__}: {e}")
     if stats["bytes_png"]:
         print(f'\nTOTAL png {stats["bytes_png"]/1e6:.0f}MB -> webp {stats["bytes_webp"]/1e6:.0f}MB '
               f'({stats["bytes_webp"]/stats["bytes_png"]*100:.0f}%), failures {stats["fail"]}')
