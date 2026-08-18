@@ -18,15 +18,29 @@ import type {
  * hard per-deploy file limit that the raw asset count would blow past). In dev
  * we keep serving them locally from /public for offline convenience.
  */
-const CDN_BASE =
+/* The default 20 makers' assets live in the main repo. A handful of large
+ * makers are sharded into the separate ocmaker-media repo to stay under
+ * jsDelivr's per-repo file ceiling. Route each maker's assets to its repo. */
+const MAIN_REPO = 'LeonaDavinci/ocmaker';
+const MEDIA_REPO = 'LeonaDavinci/ocmaker-media';
+const MEDIA_MAKERS = new Set(['2141620', '94097']);
+
+const repoFor = (id: string | null | undefined): string =>
+  id && MEDIA_MAKERS.has(String(id)) ? MEDIA_REPO : MAIN_REPO;
+
+const cdnBaseFor = (id: string | null | undefined): string =>
   process.env.NODE_ENV === 'production'
-    ? 'https://cdn.jsdelivr.net/gh/LeonaDavinci/ocmaker@main/public'
+    ? `https://cdn.jsdelivr.net/gh/${repoFor(id)}@main/public`
     : '';
 
+/** Active maker id, set while a manifest is being rewritten so nested asset
+ *  URLs resolve to that maker's own asset repo. */
+let _activeId: string | null = null;
+
 /** Rewrite a /makers/... path to the CDN in production, or leave it local in dev. */
-export const assetUrl = (u?: string | null): string => {
+export const assetUrl = (u?: string | null, id?: string | null): string => {
   if (!u) return u ?? '';
-  if (u.startsWith('/makers/')) return `${CDN_BASE}${u}`;
+  if (u.startsWith('/makers/')) return `${cdnBaseFor(id ?? _activeId)}${u}`;
   return u;
 };
 
@@ -56,7 +70,10 @@ export function loadManifest(id: string): Promise<MakerManifest> {
     p = fetch(`/makers/${id}.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`manifest ${id}: HTTP ${r.status}`);
-        return (r.json() as Promise<MakerManifest>).then((m) => rewriteManifest(m));
+        return (r.json() as Promise<MakerManifest>).then((m) => {
+          _activeId = id;
+          return rewriteManifest(m);
+        });
       })
       .catch((e) => {
         cache.delete(id);

@@ -161,7 +161,7 @@ FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 MANIFEST = {
     "name": "OC Maker — character creators for games, anime & IPs",
     "short_name": "OC Maker",
-    "description": "Free browser-only OC makers for 20 fandoms. Nothing is uploaded.",
+    "description": "Free browser-only OC makers for {n} fandoms. Nothing is uploaded.",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
@@ -276,6 +276,7 @@ def maker_card(m) -> Image.Image:
 def main() -> None:
     os.makedirs(OG_DIR, exist_ok=True)
     cat = json.load(open(os.path.join(PUB, "makers", "catalogue.json"), encoding="utf-8"))
+    MANIFEST["description"] = MANIFEST["description"].format(n=len(cat))
 
     open(os.path.join(PUB, "favicon.svg"), "w", encoding="utf-8").write(FAVICON_SVG)
     json.dump(MANIFEST, open(os.path.join(PUB, "site.webmanifest"), "w", encoding="utf-8"), indent=2)

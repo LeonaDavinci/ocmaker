@@ -7,7 +7,8 @@
 export const SITE_URL = 'https://www.ocmaker.site';
 export const SITE_DOMAIN = 'www.ocmaker.site';
 export const SITE_NAME = 'OC Maker';
-export const SITE_TAGLINE = 'Free character creators for 12 games, anime & IPs';
+import { catalogue } from '@/app/lib/catalogue';
+export const SITE_TAGLINE = `Free character creators for ${catalogue.length} games, anime & IPs`;
 export const SITE_DESCRIPTION =
   'Build an original character for Dandy\u2019s World, Sonic, My Little Pony, Warrior Cats, FNAF, Genshin, Hazbin Hotel, Murder Drones, Gorilla Tag and more. Swap hair, eyes, brows, muzzles, horns and outfits, recolour every layer, then download a transparent PNG. 100% free and fully in-browser.';
 

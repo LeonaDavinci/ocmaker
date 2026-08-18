@@ -198,6 +198,66 @@
   "manifestKB": 33
  },
  {
+  "id": "2141620",
+  "slug": "oc-maker",
+  "name": "OC Maker",
+  "franchise": "Original",
+  "category": "General",
+  "rank": 3700,
+  "blurb": "A deep, versatile original-character kit with broad part and colour coverage.",
+  "title": "OC Creator",
+  "creator": "MaeEllen",
+  "icon": "/makers/2141620/icon_YxoA4NQbNa1veWIH.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "少年",
+   "cute",
+   "monster",
+   "demon",
+   "pretty",
+   "elf",
+   "orc",
+   "Tiefling"
+  ],
+  "parts": 43,
+  "items": 553,
+  "colors": 327,
+  "images": 4696,
+  "combinations": 2.426069660679387e+71,
+  "manifestKB": 351
+ },
+ {
+  "id": "94097",
+  "slug": "picrew-creator",
+  "name": "Picrew Character Creator",
+  "franchise": "Original",
+  "category": "General",
+  "rank": 3400,
+  "blurb": "The classic Picrew character creator — a foundational anime-style face and outfit kit.",
+  "title": "Character Creator",
+  "creator": "Sangled",
+  "icon": "/makers/94097/icon_hbYtfzKprZwchS12.webp",
+  "canvas": {
+   "w": 600,
+   "h": 600
+  },
+  "tags": [
+   "OC",
+   "character",
+   "lgbt",
+   "pride"
+  ],
+  "parts": 27,
+  "items": 478,
+  "colors": 265,
+  "images": 5252,
+  "combinations": 2.2270976003887735e+52,
+  "manifestKB": 345
+ },
+ {
   "id": "708151",
   "slug": "fantasy-maker",
   "name": "Fantasy Character Maker",

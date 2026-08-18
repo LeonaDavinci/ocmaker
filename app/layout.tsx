@@ -5,6 +5,7 @@ import {
   SITE_TAGLINE,
   SITE_URL,
 } from '@/app/lib/site';
+import { catalogue } from '@/app/lib/catalogue';
 import './globals.css';
 import './gallery.css';
 
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
         url: '/og.png',
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} preview: character creators for 20 fandoms`,
+        alt: `${SITE_NAME} preview: character creators for ${catalogue.length} fandoms`,
       },
     ],
   },

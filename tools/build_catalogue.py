@@ -49,6 +49,11 @@ CURATED = [
      "Shonen-manga style face and outfit creator with bold ink outlines."),
     ("111486",  "fantasy-oc-creator", "Fantasy OC Creator",      "Original",          "Fantasy",   520,
      "Niche-fantasy character kit — diverse skin tones, masculine features and hidden colour goodies."),
+    # --- batch 3: first 2 of the 33-maker expansion that finished building (assets in ocmaker-media) ---
+    ("2141620", "oc-maker",           "OC Maker",                "Original",          "General",   3700,
+     "A deep, versatile original-character kit with broad part and colour coverage."),
+    ("94097",   "picrew-creator",     "Picrew Character Creator", "Original",          "General",   3400,
+     "The classic Picrew character creator — a foundational anime-style face and outfit kit."),
 ]
 
 
